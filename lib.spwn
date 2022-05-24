@@ -1,0 +1,16 @@
+let chars = $.readfile("chars.json", "json")
+let reverse = $.readfile("revchars.json", "json")
+
+let fromCharCode = (char) {
+	return chars[@string(char)]
+}
+
+let charCodeAt = (string, index) {
+	let character = string.split("")[index]
+	return reverse[character]
+}
+
+return {
+	fromCharCode: fromCharCode,
+	charCodeAt: charCodeAt
+}
